@@ -1,44 +1,6 @@
-@main-text-color: blue;
-
-body {
-	color: @main-text-color;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:700|Source+Sans+Pro:400,400italic,700,700italic);
-
-h1, h2, h3, h4, h5, h6 {	
-	font-family: 'Droid Serif', serif;
-}
-
-body {
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-.media.link {
-	background-color: white;
-	box-shadow: 0 5px 10px #bbbbbb, inset 0 0 0 #ffffff;
-	display: block;
-	margin: 50px;
-	padding: 50px;
-	transition: background 250ms, box-shadow 250ms;
-}
-
-.media.link img {
-	transition: translate 250ms;
-	transform: scale(0,0);
-}
-
-.media.link:hover img{
-	transform: scale(1,1)}
-
-/* Al poner el ratón encima */
-
-.media.link:hover {
-	background: #eeeeee;
-}
-
-/* Al hacer click */
-
-.media.link:active{
-	box-shadow: 0 5px 10px #bbbbbb, inset 0 5px 10px black; 
-}
+@import "fonts.less";
+@import "variables.less";
+@import "utils.less";
+@import "layout.less";
+@import "html-tags.less";
+@import "header.less";

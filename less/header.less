@@ -1,0 +1,28 @@
+.web.header {
+	background: @fifth-colour;
+	.brand {
+		font-size: 25px;
+		font-family: @font-family-serif;
+		color: white;
+	}
+	.main.menu {
+		ul {
+			.horizontal-list();
+			text-align: center;
+			margin-left: 4px;
+			li { margin-left: -4px; }
+			a {
+				color: white;
+				display: inline-block;
+				text-decoration: none;
+				background-color: darken(@fifth-colour, 30%);
+				padding: 8px 5px;				
+				transition: background 250ms;
+				&:hover {
+					background-color: darken(@fifth-colour, 20%);					
+				}
+			}
+		}
+	}
+	.form.search { margin-top: 10px; }	
+}
