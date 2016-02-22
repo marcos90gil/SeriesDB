@@ -1,3 +1,40 @@
 .media.item {
-	img { .img-responsive(); }
+	height: 350px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	.cover { overflow: hidden; }
+	&:hover {
+		img {
+			transform: scale(1.2);
+		}
+	}
+	.link {
+		color: black;
+	}
+	img { 
+		.img-responsive();
+		transition: 250ms;
+	}
+	.wrapper {
+		margin: 0 20px 20px 20px;
+	}
+	.title {
+		font-size: 18px;
+		margin: 0 0 15px 0px;
+	}
+	.category ul {
+		.horizontal-list();
+		li:after {
+			content: ",";
+		}
+		li:last-child:after {
+			content: "";
+		}
+		margin-right: 5px;
+	}
+	.rating {
+		display: inline;
+		margin-left: 5px;
+	}
 }
+
