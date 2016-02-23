@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="demo1">Hello world</div>
+	<div id="demo2">Hello world</div>
+	<div id="demo3">Hello world</div>
+	<button onclick="document.getElementById('demo1').innerHTML=new Date()">Update date</button>
+	<button onclick="updateDate()">Update date script</button>
+	<button id='updateBateButton'>Update date listener</button>
+	<button id="addListenerButton">Add listener</button>
+	<button id="removeListenerButton">Remove listener</button>
+	<script>
+		function updateDate(){
+			document.getElementById('demo2').innerHTML=new Date();	
+		}
+
+		function updateDate2(){
+			document.getElementById('demo3').innerHTML=new Date();	
+		}
+
+		function addListener() {
+			// Cogemos el botón y cuando se haga clic actuamos
+			document.getElementById('updateBateButton').addEventListener('click', updateDate2);
+		}
+
+		function removeListener() {
+			document.getElementById('updateBateButton').removeEventListener('click', updateDate2);
+		}		
+
+		document.getElementById('addListenerButton').addEventListener('click', addListener);
+		document.getElementById('removeListenerButton').addEventListener('click', removeListener);
+	</script>
+</body>
+</html>
