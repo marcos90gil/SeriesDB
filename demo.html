@@ -14,6 +14,8 @@
 	<button id='updateBateButton'>Update date listener</button>
 	<button id="addListenerButton">Add listener</button>
 	<button id="removeListenerButton">Remove listener</button>
+	<div id="demo5">Contenido editable</div>
+	<button id="saveButton">Save</button>
 	<script>
 		//
 		function updateDate(){
@@ -39,7 +41,7 @@
 
 		// Funciones anónimas
 		function updateDate3(){
-			debugger;
+			// debugger;
 			console.log("updateDate3", arguments);
 			document.getElementById('demo4').innerHTML=new Date();	
 		}
@@ -52,6 +54,13 @@
 			console.log("removeEventListener", arguments);
 			document.getElementById('updateBateButton').removeEventListener('click', updateDate3);
 		});
+
+		// contenido editable
+		document.getElementById('demo5').contentEditable = true;
+
+		document.getElementById('saveButton').addEventListener('click', function(evt){
+			console.log('Contenido', document.getElementById('demo5').innerHTML)
+		})
 	</script>
 </body>
 </html>
