@@ -7,33 +7,35 @@
 <body>
 
 <!--	<img src="http://es.downloadicons.net/sites/default/files/asustar-a-los-iconos-de-monstruo-caninos-5568.png"> -->
-	<div id="container" style="background: gold; padding: 20px;">
-		<div id="content" style="background: coral; padding: 20px;">This is the content</div>
-	</div>
-
-	<a href="http://wwww.google.com/" target="_blanck">Ir a Google</a>
+	<button id="changeBackgroundColor">Cambiar color de fondo</button>
 
 	<script>
 
-		document.getElementById('content').addEventListener('click', function(event){
-			console.log("content clicked");
+		document.body.style.transition = 'background-color 250ms';
+
+		var timeoutID = null;
+
+		document.getElementById('changeBackgroundColor').addEventListener('click', function(event){
+			
+			console.log("1. Hago click en el botón")
+
+			if (timeoutID != null) {
+				clearTimeout(timeoutID);
+			}
+
+			timeoutID = setTimeout(function(){
+				console.log("2. Ha terminado el setTimeout")
+				var currentColor = document.body.style.backgroundColor; // Almacenar elementos del DOM en variables puede ayudar al navegador
+				if (currentColor == 'coral') {
+					document.body.style.backgroundColor = 'white';
+				} else {
+					document.body.style.backgroundColor = 'coral';
+				}
+				timeoutID = null;
+			}, 2000);
+			console.log("3. Ya he puesto el timeout");
+
 		});
-
-		document.getElementById('container').addEventListener('click', function(event){
-			//event.stopPropagation();
-			console.log("CONTAINER CLICKED");
-		}), true; //Event capturing
-
-		document.body.addEventListener('click', function(event){
-			console.log("body clicked");
-		}), true;
-
-		document.getElementsByTagName("a")[0].addEventListener('click', function(event){
-			console.log("Google link");
-			event.preventDefault();
-
-		});
-
 
 	</script>
 </body>
