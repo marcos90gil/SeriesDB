@@ -27,7 +27,24 @@ $(document).ready(function(){ // Cuando la página esté cargada
 			return false;
 		}
 
-		return true;
+		$.ajax({
+			url: "api/series/",
+			data: JSON.stringify({
+				title: title,
+				url: url
+			}),
+			contentType: 'application/json',
+			method: 'post',
+			success: function(){
+				alert("Guardado con éxito");
+			},
+			error: function(){
+				alert("Se ha producido un error");
+			}
+
+		});
+
+		return false;
 
 	});
 
