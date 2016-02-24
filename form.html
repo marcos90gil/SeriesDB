@@ -8,10 +8,10 @@
 	<h1>Nueva serie</h1>
 	<form novalidate>
 		<div>
-			<input type="text" id="title" name="title" placeholder="Título de la serie" required>
+			<input type="text" id="title" name="title" placeholder="Título de la serie" required class="auto-focus">
 		</div>
 		<div>
-			<input type="url" id="cover_url" name="cover_url" placeholder="URL de la imagen de la serie" pattern="^https?://[a-z0-9]+\.[a-z0-9]+/.+">
+			<input type="url" id="cover_url" name="cover_url" placeholder="URL de la imagen de la serie">
 		</div>
 		<div>
 			<textarea name="plot" id="plot" placeholder="Argumento de la serie"></textarea>
@@ -59,7 +59,7 @@
 				<ul>
 					<li>
 						<label >
-							<input type="radio" name="age_cal" value="all" required>
+							<input type="radio" name="age_cal" value="all" required checked>
 							Todos los públicos
 						</label>
 					</li>
@@ -90,7 +90,9 @@
 		<div><button type="submit">Crear serie</button>
 		</div>
 
-
 	</form>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/src/app.js"></script>
 </body>
 </html>
