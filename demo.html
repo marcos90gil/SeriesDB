@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<!--	<img src="http://es.downloadicons.net/sites/default/files/asustar-a-los-iconos-de-monstruo-caninos-5568.png"> -->
+	<button id="getDataButton">Get data</button>
+	<div id="content">JSON</div>
+	<button id="getWebButton">Get web</button>
+	<div id="web">HTML</div>
+
+	<script>
+
+		document.getElementById('getDataButton').addEventListener('click', function(){
+			console.log("Configuro XMLHttpRequest")
+			var xhr = new XMLHttpRequest(); // Creamos el objeto XMLHttpRequest
+			xhr.open("GET", "data.json", true);
+			xhr.onreadystatechange = function(){
+				console.log("onreadystatechange", arguments);
+				document.getElementById('content').innerHTML = this.responseText;
+			};
+			xhr.send();
+			console.log("Envío XMLHttpRequest");
+		});
+
+		document.getElementById('getWebButton').addEventListener('click', function(){
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "index.html", true);
+			xhr.onreadystatechange = function(){
+				console.log("onreadystatechange", arguments);
+				document.getElementById('web').innerHTML = this.responseText;
+			};
+			xhr.send();
+			console.log("Envío XMLHttpRequest");
+		});
+
+	</script>
+</body>
+</html> 

@@ -2,117 +2,195 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>Series DB</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header class="web header">
-		<div class="brand">Series DB</div>
-		<nav class="web nav">
-			<ul>
-				<li>
-					<a href="#" title="Sistema de recomendación de series y películas">Descubrir</a>	
-				</li>
-				<li>
-					<a href="#" title="Catálogo de películas">Películas</a>
-				</li>
-				<li>
-					<a href="#" title="Catálogo de series">Series</a>
-				</li>
-				<li>
-					<a href="#" title="Listado de actores y actrices de series y películas">Actores y actrices</a>
-				</li>
-			</ul>
-		</nav>
-		<form class="search form">
-			<input type="hidden" name="oculto" value="lorem ipsum">
-			<input type="search" id="search" name="q" placeholder="Buscar...">
-			<button type="search">Buscar</button>
-		</form>
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+					<div class="brand">Series DB</div>				
+				</div>
+				<div class="col-6">
+					<nav class="main menu">
+						<ul>
+							<li>
+								<a href="#" title="Sistema de recomendación de series y películas">Descubrir</a>	
+							</li>
+							<li>
+								<a href="#" title="Catálogo de películas">Películas</a>
+							</li>
+							<li>
+								<a href="#" title="Catálogo de series">Series</a>
+							</li>
+							<li>
+								<a href="#" title="Listado de actores y actrices de series y películas">Actores y actrices</a>
+							</li>
+						</ul>
+					</nav>				
+				</div>
+				<div class="col-3">
+					<form class="search form">
+						<input type="hidden" name="oculto" value="lorem ipsum">
+						<input type="search" id="search" name="q" placeholder="Buscar...">
+						<button type="search">Buscar</button>
+					</form>				
+				</div>	
+			</div>
+		</div>
 	</header>
 		<main class="web main">
-			<section class="series media list">
-				<header class="series list header">
-					<h2 class="series list header title">Catálogo de series</h2>
-				</header>
-				<article class="series media item">
-					<a href="" class="series media link">
-						<header class="series media header">
-							<h3 class="series media title">Supernatural</h3>
-							<img src="https://image.tmdb.org/t/p/w370/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg" alt="Supermatural Wrestle your demons" title="Carátula de Supermatural">
+			<div class="container">
+					<section class="series media list">
+						<header class="series list header">
+							<h2 class="series list header title">Catálogo de series</h2>
 						</header>
-						<div class="meta">							
-							<div class="category">
-								<ul>
-									<li>Drama</li>
-									<li>Misterio</li>
-								</ul>
+						<div class="row">
+							<div class="col-4">
+								<article class="series media item">
+									<a href="./media-item.html" class="series media link">
+										<div class="row">
+											<div class="col-6">
+												<div class="cover">													
+													<img src="https://image.tmdb.org/t/p/w370/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg" alt="Supermatural Wrestle your demons" title="Carátula de Supermatural">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="media wrapper">
+													<header class="series media header">
+														<h3 class="series media title">Supernatural</h3>
+													</header>
+													<div class="meta">														
+														<div class="category">
+															<ul>
+																<li>Drama</li>
+																<li>Misterio</li>
+															</ul>
+														</div>									
+														<time class="release date" datetime="2005-03-12">2005</time>
+														<div class="rating">7.1</div>							
+													</div>
+													<p class="overview">Cuando eran niños, Sam y Dean Winchester, perdieron a su madre debido a una misteriosa y demoníaca fuerza supernatural. Posteriormente, su padre los crió para que…</p>	
+												</div>											
+											</div>
+										</div>
+									</a>
+								</article>								
 							</div>
-							<time class="release date" datetime="2005-03-12">2005</time>
-							<div class="rating">7.1</div>					
-						</div>
-						<p class="overview">Cuando eran niños, Sam y Dean Winchester, perdieron a su madre debido a una misteriosa y demoníaca fuerza supernatural. Posteriormente, su padre los crió para que…</p>
-
-					</a>
-				</article>
-				<article class="series media item">
-					<a href="#" class="series media link">
-						<header class="series media header">
-							<h3 class="series media title">The Walking Dead</h3>
-							<img src="https://image.tmdb.org/t/p/w370/vxuoMW6YBt6UsxvMfRNwRl9LtWS.jpg" alt="Poster de The Walking Dead con Rick" title="Carátula de The Walking Dead">
-						</header>
-						<div class="meta">							
-							<div class="category">
-								<ul>
-									<li>Drama</li>
-									<li>Misterio</li>
-								</ul>
+							<div class="col-4">
+								<article class="series media item">
+									<a href="./media-item.html" class="series media link">
+										<div class="row">
+											<div class="col-6">
+												<div class="cover">													
+													<img src="https://image.tmdb.org/t/p/w370/vxuoMW6YBt6UsxvMfRNwRl9LtWS.jpg" alt="Poster de The Walking Dead con Rick" title="Carátula de The Walking Dead">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="media wrapper">
+													<header class="series media header">
+														<h3 class="series media title">The Walking Dead</h3>
+													</header>
+													<div class="meta">							
+														<div class="category">
+															<ul>
+																<li>Drama</li>
+																<li>Misterio</li>
+																<li>Drama</li>
+																<li>Misterio</li>
+																<li>Drama</li>
+																<li>Misterio</li>
+															</ul>
+														</div>
+														<time class="release date" datetime="2005-03-12">2005</time>
+														<div class="rating">7.1</div>					
+													</div>
+													<p class="overview">"The Walking Dead" está ambientada en un futuro apocalíptico con la Tierra devastada por el efecto de un cataclismo, que ha provocado la mutación en zombies de la…</p>														
+												</div>
+											</div>
+										</div>
+									</a>
+								</article>									
 							</div>
-							<time class="release date" datetime="2005-03-12">2005</time>
-							<div class="rating">7.1</div>					
-						</div>
-						<p class="overview">"The Walking Dead" está ambientada en un futuro apocalíptico con la Tierra devastada por el efecto de un cataclismo, que ha provocado la mutación en zombies de la…</p>
-						
-					</a>
-				</article>	
-				<article class="series media item">
-					<a href="#" class="series media link">
-						<header class="series media header">
-							<h3 class="series media title">The Big Bang Theoryl</h3>
-							<img src="https://image.tmdb.org/t/p/w370/wQoosZYg9FqPrmI4zeCLRdEbqAB.jpg" alt="Poster con los personajes de The Big Bang Theory" title="Carátula de The Big Bang Theory">
-						</header>
-						<div class="meta">							
-							<div class="category">
-								<ul>
-									<li>Comedia</li>
-									<li>Ciencia</li>
-								</ul>
+							<div class="col-4">
+								<article class="series media item">
+									<a href="./media-item.html" class="series media link">
+										<div class="row">
+											<div class="col-6">
+												<div class="cover">
+													<img src="https://image.tmdb.org/t/p/w370/wQoosZYg9FqPrmI4zeCLRdEbqAB.jpg" alt="Poster con los personajes de The Big Bang Theory" title="Carátula de The Big Bang Theory">														
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="media wrapper">
+													<header class="series media header">
+														<h3 class="series media title">The Big Bang Theoryl</h3>
+													</header>
+													<div class="meta">							
+														<div class="row">
+															<div class="col-8">
+																<div class="category">
+																	<ul>
+																		<li>Comedia</li>
+																		<li>Ciencia</li>
+																	</ul>
+																</div>															
+															</div>
+															<div class="col-4">
+																<time class="release date" datetime="2007-03-12">2007</time>
+																<div class="rating">7.4</div>
+															</div>
+														</div>
+													</div>													
+													<p class="overview">The Big Bang Theory se centra en la vida de cinco personajes que residen en Pasadena, California: los compañeros de piso Leonard Hofstadter y Sheldon Cooper; su…</p>
+												</div>												
+											</div>
+										</div>
+									</a>
+								</article>								
 							</div>
-							<time class="release date" datetime="2007-03-12">2007</time>
-							<div class="rating">7.4</div>					
-						</div>
-						<p class="overview">The Big Bang Theory se centra en la vida de cinco personajes que residen en Pasadena, California: los compañeros de piso Leonard Hofstadter y Sheldon Cooper; su…</p>
-					</a>
-				</article>
-				<article class="series media item">
-					<a href="#" class="series media link">
-						<header class="series media header">
-							<h3 class="series media title">The Simpsons</h3>
-							<img src="https://image.tmdb.org/t/p/w370/yTZQkSsxUFJZJe67IenRM0AEklc.jpg" alt="Poster con los personajes de The Simpsons" title="Carátula The Simpsons">
-						</header>
-						<div class="meta">							
-							<div class="category">
-								<ul>
-									<li>Comedia</li>
-									<li>Dibujos</li>
-								</ul>
+							<div class="col-4">
+								<article class="series media item">
+									<a href="./media-item.html" class="series media link">
+										<div class="row">
+											<div class="col-6">
+												<div class="cover">													
+													<img src="https://image.tmdb.org/t/p/w370/yTZQkSsxUFJZJe67IenRM0AEklc.jpg" alt="Poster con los personajes de The Simpsons" title="Carátula The Simpsons">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="media wrapper">
+													<header class="series media header">
+														<h3 class="series media title">The Simpsons</h3>
+													</header>
+													<div class="meta">
+														<div class="row">
+															<div class="col-8">
+																<div class="category">
+																	<ul>
+																		<li>Comedia</li>
+																		<li>Dibujos</li>
+																	</ul>
+																</div>															
+															</div>
+															<div class="col-4">
+																<time class="release date" datetime="1989-03-12">1989</time>
+																<div class="rating">8</div>
+															</div>
+														</div>						
+													</div>
+													<p class="overview">Los Simpsons es una comedia americana de animación creada por Matt Groening para la compañía Fox. La serie es una parodia satírica del estilo de la clase media americana…</p>
+												</div>	
+											</div>
+										</div>
+									</a>
+								</article>										
 							</div>
-							<time class="release date" datetime="1989-03-12">1989</time>
-							<div class="rating">8</div>					
 						</div>
-						<p class="overview">Los Simpsons es una comedia americana de animación creada por Matt Groening para la compañía Fox. La serie es una parodia satírica del estilo de la clase media americana…</p>
-					</a>
-				</article>		
-			</section>			
+					</section>						
+			</div>
 		</main>
 	<footer class="web footer">
 		<nav>
