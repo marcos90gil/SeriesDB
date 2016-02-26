@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Drag & Drop</title>
+	<style>
+		.drag {
+			width: 100px;
+			height: 100px;
+			background: gold;
+			margin-right: 10px;
+			display: inline-block;
+		}
+
+		#drop {
+			width: 100%;
+			height: 70%;
+			background: grey;
+			position: fixed;
+			bottom: 0px;
+			transition: 300ms;
+		}
+
+		#drop.ok { background: lightgreen; }
+		#drop.error { background: tomato; }		
+
+	</style>
+</head>
+<body>
+
+	<div class="drag" draggable="true" data-movie-id="A">A</div>
+	<div class="drag" draggable="true" data-movie-id="B">B</div>
+	<div class="drag" draggable="true" data-movie-id="C">C</div>
+	<div class="drag" draggable="true" data-movie-id="D">D</div>
+
+	<div id="drop"></div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<script>
+	
+		var draggedMovieId = null; // definimos variable global como ñapa del dataTranfer no soportado en chrome en eventos dragover, dragleave...
+		
+
+		$(".drag").on("dragstart", function(evt){
+			
+			console.log("DRAG START", evt);
+			// ponemos id de la serie seleccionada
+			draggedMovieId = $(this).data("movieId");
+			evt.originalEvent.dataTransfer.setData("movieId", draggedMovieId);
+		
+		}).on("dragend", function(evt){
+		
+			console.log("DRAG STOP", evt);
+			draggedMovieId = null;
+		
+		});
+
+		$("#drop").on("dragover", function(evt){
+			
+			evt.preventDefault();
+			console.log("DRAG OVER", draggedMovieId, evt);
+			if (draggedMovieId != "B") {
+				$(this).addClass("ok");
+			} else {
+				$(this).addClass("error");
+			}
+		
+		}).on("dragleave", function(evt){
+
+			evt.preventDefault();
+			console.log("DRAG LEAVE", evt);
+			$(this).removeClass("ok error");
+
+		}).on("drop", function(evt){
+			
+			evt.preventDefault();
+			console.log("DROPPED", draggedMovieId);
+			var movieId = evt.originalEvent.dataTransfer.getData("movieId");
+			if (movieId != "B") {
+				var text = $(this).text();
+				text += movieId;
+				$(this).text(text);
+			}
+			$(this).removeClass("ok error");
+		
+		});
+
+	</script>
+</body>
+</html>
