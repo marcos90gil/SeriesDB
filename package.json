@@ -1,6 +1,6 @@
 {
   "name": "seriesdb",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An awesome clone of The Movie Database to learn HTML5, CSS3 and JavaScript.",
   "main": "index.js",
   "scripts": {

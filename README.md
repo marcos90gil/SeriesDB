@@ -5,11 +5,11 @@ An awesome clone of The Movie Database to learn HTML5, CSS3 and JavaScript.
 
 Debes tener instalado [node](https://nodejs.org/en/) y con *npm* instalar *grunt* y *less* utilizando:
 
-...
+```
 $ sudo npm install -g grunt-cli less
-...
+```
 
-A contiuación clona el repositorio e instala las dependencias para grunt con npm install`desde la carpeta del proyecto.
+A contiuación clona el repositorio e instala las dependencias para grunt con `npm install`desde la carpeta del proyecto.
 
 Después arranca *grunt*, utilizando el comando `grunt`
 
@@ -20,3 +20,13 @@ Después arranca *grunt*, utilizando el comando `grunt`
 * Plantilla formulario
 * Plantilla de listado de series (sólo HTML5)
 * Plantilla de detalle de una serie (sólo HTML5)
+
+### v.0.2.0 - 2016-02-26
+
+* Estilos en less
+* Automatización de tareas con grunt
+* Ejemplos con jquery y ajax 
+    * Peticiones https
+    * Validación de formularios
+    * Geolocalizacion
+    * Drag & Drop de elementos html y archivos
