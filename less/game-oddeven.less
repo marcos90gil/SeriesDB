@@ -1,0 +1,27 @@
+.game.title {
+	text-align: center;
+	font-size: 35px;
+}
+
+.game.drag {
+	background: #00DFFC;
+	color: floralwhite;
+	height: 100px;
+	border-radius: 10px;
+	margin: 2px;
+	font-size: 40px;
+}
+
+.game.drop {
+	background: @first-colour;
+	color: floralwhite;
+	height: 300px;
+	border-radius: 10px;
+	margin: 2px;
+	font-size: 40px;	
+	transition: 350ms;
+}	
+.game.drop.dropped { background: @second-colour; }
+.game.drop.dropped.ok { background: lightgreen; }
+.game.drop.dropped.error { background: tomato; }
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Drag & Drop Game</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">	
+		<h1 class="game title">ORDENA LOS NÚMEROS EN PARES O IMPARES</h1>
+		<div class="row">
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="1">1</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="2">2</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="3">3</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="4">4</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="5">5</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="6">6</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="7">7</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="8">8</div>
+			</div>
+			<div class="col-1">				
+				<div class="game drag" draggable="true" data-number-id="9">9</div>
+			</div>
+		</div>
+		<div class="row">	
+			<div class="col-6">				
+				<div class="game drop" data-number-type="even">PAR: </div>
+			</div>
+			<div class="col-6">				
+				<div class="game drop" data-number-type="odd">IMPAR: </div>
+			</div>		
+		</div>
+	</div>
+
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<script>
+	
+		var draggedNumberId = null; // definimos variable global como ñapa del dataTranfer no soportado en chrome en eventos dragover, dragleave...
+		var droppedNumberType = null;
+		
+		$(".drag").on("dragstart", function(evt){
+			
+			// ponemos id del número seleccionado
+			draggedNumberId = $(this).data("numberId");
+			console.log("DRAG START", draggedNumberId, evt);
+			evt.originalEvent.dataTransfer.setData("numberId", draggedNumberId);
+
+		}).on("dragend", function(evt){
+		
+			console.log("DRAG STOP", evt);
+			draggedNumberId = null;
+		
+		});
+
+		$(".drop").on("dragover", function(evt){
+			
+			evt.preventDefault();
+			droppedNumberType = $(this).data("numberType");
+			console.log("DRAG OVER", draggedNumberId, droppedNumberType, evt);
+			$(this).addClass("dropped");
+		
+		}).on("dragleave", function(evt){
+
+			evt.preventDefault();
+			console.log("DRAG LEAVE", evt);
+			$(this).removeClass("dropped");
+
+		}).on("drop", function(evt){
+			
+			evt.preventDefault();
+			console.log("DROPPED", draggedNumberId);
+			var numberId = evt.originalEvent.dataTransfer.getData("numberId");
+			var self = $(this);
+			var text = self.text();
+			if (droppedNumberType == "even") {				
+				if ( (draggedNumberId%2) == 0) {
+					text += numberId;
+					self.text(text);	
+					self.addClass("ok");				
+				} else self.addClass("error");
+			} else {
+				if ( (draggedNumberId%2) != 0) {
+					text += numberId;
+					self.text(text);
+					self.addClass("ok");
+				} else self.addClass("error");
+			}
+			setTimeout(function(){ 
+				console.log("Entro en el timeup");
+				self.removeClass("ok error dropped");
+			}, 500);	
+			
+		
+		});
+
+	</script>
+</body>
+</html>
